@@ -1,1 +1,70 @@
-<h1>A web!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Map with Hover</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+<div id="map" style="height: 500px;"></div>
+
+<script>
+    // Initialize the map
+    var map = L.map('map').setView([0, 0], 2);
+
+    // Add a tile layer (you can choose a different one if you prefer)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Sample data for markers (you can replace this with your own data)
+    var markerData = [
+        {lat: 41.83754684962796, lng: -88.26958093726991, label: 'MicroBooNE', imagePath: './pic/logo_ub.jpeg'},//, imageWidth: 120},
+        {lat: 34.0522, lng: -118.2437, label: 'Los Angeles'},
+        // Add more markers as needed
+    ];
+
+//THE INPUT KEY IS THE ABOVE
+    // Add markers to the map with pop up
+    markerData.forEach(function(marker) {
+		var popupContent = '<p>' + marker.label + '</p>';
+        var markerPopup = L.popup().setContent(popupContent);
+
+        L.marker([marker.lat, marker.lng])
+            .bindPopup(markerPopup)
+            .addTo(map)
+            .on('mouseover', function() {//Action 1: mouseover
+				markerPopup.setContent(popupContent);
+                this.openPopup();
+            })
+            .on('mouseout', function() {//Action 2: mouseout
+                this.closePopup();
+            })
+			.on('click', function() {//Action 3: Click
+                // Handle click event (show image or perform other actions)
+			   var imageContent = '<img src="' + marker.imagePath + '" alt="' + marker.label + ' Image" style="max-width: 120px; height: auto; ">';
+                markerPopup.setContent(imageContent);
+				this.openPopup();
+            });
+    });
+
+    // Hover function
+    function onMapHover(e) {
+        // Display information about the hovered location (customize as needed)
+        console.log('Hovered over:', e.latlng);
+    }
+
+    // Add hover event to the map
+    map.on('mousemove', onMapHover);
+
+
+</script>
+
+</body>
+</html>
