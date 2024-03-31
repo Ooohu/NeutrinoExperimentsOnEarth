@@ -6,6 +6,11 @@ body {
     margin: 0;
 }
 
+
+html {
+  overflow-y: scroll;
+}
+
 .container {
     text-align: center;
 }
@@ -17,7 +22,4 @@ body {
 .input-container label {
     display: block;
     margin-bottom: 5px;
-}
-
-
 }
