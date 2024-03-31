@@ -7,10 +7,6 @@ body {
 }
 
 
-html {
-  overflow-y: scroll;
-}
-
 .container {
     text-align: center;
 }
