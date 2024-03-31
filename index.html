@@ -19,24 +19,28 @@
 <body>
 
 <!-- the map part-->
-<div id="map" style="height: 500px;"></div>
+<div id="map" style="height: 300px;"></div>
+<script src="utility/map.js"></script>
+
+<div style="margin-left:100px;margin-right:100px;">
 <p>This webpage, NeutrinoExperimentsOnEarth, is maintained by Keng Lin,
   contact: keng.linATrutgers.edu</p>
   <p>I am collecting information regarding any neutrino experiments,
     if you would like to help, please use the fill in the following form:
   <a href="https://forms.gle/WcvSnw4ut5i9zfTq8"> Questionnaire</a>. </p>
-<script src="utility/map.js"></script>
+</div>
+
 
 
 <!-- put two QRCode at the bottome -->
 <div style="height:65px">
-  <div class="logo1" style="position:absolute;left:7px;bottom:0px;z-index:999">
+  <div class="logo1" style="position:fixed;left:7px;bottom:0px;z-index:999">
     <p style="font-size:8px; background-color:#FFFFFF;">
       Questionnaire QR code: </p>
     <img src="pic/questionnaireQRCode.png" alt="questionnaireQRCode" style="height:60px">
   </div>
 
-  <div class="logo2" style="position:absolute;right:7px;bottom:0px;z-index:999">
+  <div class="logo2" style="position:fixed;right:7px;bottom:0px;z-index:999">
     <p style="font-size:8px; background-color:#FFFFFF;">
       This page QR code: </p>
     <img src="pic/thispage.png" alt="thispageQRCode" style="height:60px">
