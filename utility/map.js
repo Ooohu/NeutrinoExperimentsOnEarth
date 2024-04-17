@@ -11,7 +11,10 @@ var markerData = [
     {lat: 41.83754684962796, lng: -88.26958093726991, label: 'MicroBooNE', imagePath: 'https://microboone-exp.fnal.gov/public/approved_plots/plots/3004/thumbs/kalekologo_noshadow_thumb.png'},//, imageWidth: 120},
     {lat: 38.57799080399165, lng: -121.4880515238307, label: 'APS April 2024'},
     {lat: 41.8395656, lng: -88.2702022, label: 'NOvA', imagePath: 'https://novaexperiment.fnal.gov/wp-content/uploads/2018/05/NOvA-s.jpg'},
-    // Add more markers as needed
+    {lat: 41.8394197, lng: -88.2701378, label: 'MINERvA', imagePath: 'https://minerva.fnal.gov/wp-content/uploads/2018/06/minerva_pride.jpeg'},
+    {lat: -89.9999999, lng: 0, label: 'IceCube', imagePath: 'https://res.cloudinary.com/icecube/images/q_auto/v1634931287/IceCube_vertical_fullcolor_8906b68b0/IceCube_vertical_fullcolor_8906b68b0.png?_i=AA'},
+    {lat: 36.4164, lng: 137.3159, label: 'Super-K', imagePath: 'https://gcn.nasa.gov/_static/app/_assets/logo-3JVFAKTM.png'},
+  // Add more markers as needed
 ];
 
 //THE INPUT KEY IS THE ABOVE
