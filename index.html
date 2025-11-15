@@ -1,116 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="author" content="Keng Lin">
-    <meta name="keywords" content="neutrino, neutrinos, nu, earth">
-    <meta name="description" content="NeutrinoExperimentsOnEarth">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+      <meta name="author" content="Keng Lin">
+      <meta name="keywords" content="neutrino, neutrinos, nu, earth">
+      <meta name="description" content="NeutrinoExperimentsOnEarth">
 
-    <title>Neutrino Experiments On Earth</title>
+      <title>Neutrino Experiments On Earth</title>
 
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+      <!-- Leaflet CSS -->
+      <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
 
-    <!-- Your custom styles -->
-    <link rel="stylesheet" href="utility/styles.css"/>
+      <!-- Your custom styles -->
+      <link rel="stylesheet" href="utility/styles.css"/>
 
 
-    <!-- Leaflet JavaScript -->
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+      <!-- Leaflet JavaScript -->
+      <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-</head>
-<body>
-<!-- url for form: https://docs.google.com/spreadsheets/d/1Rz3lUFNdTXeOOFCT4Qhbb7M-NeC_7I2CDYi3o5V1ypw/edit#gid=1692128851-->
-<!-- url for website: https://ooohu.github.io/NeutrinoExperimentsOnEarth/ -->
-<!-- url for questionnaire: https://docs.google.com/forms/d/1Nm1uhVYQ3VYdWN92dQQ9RSGNl8wGAIK1yW6erjVBizA/edit -->
+  </head>
+  <body>
+  <!-- url for form: https://docs.google.com/spreadsheets/d/1Rz3lUFNdTXeOOFCT4Qhbb7M-NeC_7I2CDYi3o5V1ypw/edit#gid=1692128851-->
+  <!-- url for website: https://ooohu.github.io/NeutrinoExperimentsOnEarth/ -->
+  <!-- url for questionnaire: https://docs.google.com/forms/d/1Nm1uhVYQ3VYdWN92dQQ9RSGNl8wGAIK1yW6erjVBizA/edit -->
 
-  <!-- Search Box -->
-  <div id="search-container">
-    <input type="text" id="experiment-search" placeholder="Search for an experiment..." />
-    <!-- Filter Toggle -->
-    <button id="toggle-filters">Filters ▼</button>
-    
-    <!-- Filter Panel -->
-    <div id="filter-panel" class="collapsed">
-        <div class="filter-group">
-            <label for="energy-min">Energy of Interest [MeV]:</label>
-            <div class="inputs-row">
-                <input type="number" id="energy-min" placeholder="Min">
-                <input type="number" id="energy-max" placeholder="Max">
-            </div>
-        </div>
+    <!-- Search Box -->
+    <div id="search-container">
+      <input type="text" id="experiment-search" placeholder="Search for an experiment..." />
+      <!-- Filter Toggle -->
+      <button id="toggle-filters">Filters ▼</button>
+      
+      <!-- Filter Panel -->
+      <div id="filter-panel" class="collapsed">
+          <div class="filter-group">
+              <label for="energy-min">Energy of Interest [MeV]:</label>
+              <div class="inputs-row">
+                  <input type="number" id="energy-min" placeholder="Min">
+                  <input type="number" id="energy-max" placeholder="Max">
+              </div>
+          </div>
 
-        <div class="filter-group">
-            <label for="year-min">Years:</label>
-            <div class="inputs-row">
-                <input type="number" id="year-min" placeholder="1930">
-                <input type="number" id="year-max" placeholder="Max">
-            </div>
-        </div>
+          <div class="filter-group">
+              <label for="year-min">Years:</label>
+              <div class="inputs-row">
+                  <input type="number" id="year-min" placeholder="1930">
+                  <input type="number" id="year-max" placeholder="Max">
+              </div>
+          </div>
 
-        <button id="reset-filters">Reset</button>
-    </div>
-  </div>
-
-  <!-- the map part-->
-  <div id="map"></div>
-  
-  <!-- Transparent Bottom Panel -->
-  <div id="bottom-panel" class="collapsed">
-    <div id="panel-content">
-      <p>This webpage aims to show locations of all neutrino experiments on earth.
-      Information for any neutrino experiments are being collected. Helps are appreciated.
-      If you would like to share about your experiment, please fill in this
-      <a href="https://forms.gle/WcvSnw4ut5i9zfTq8">Questionnaire</a>. 😃</p>
-      <p>This webpage, NeutrinoExperimentsOnEarth, is maintained by Keng Lin,
-      contact: keng.linATrutgers.edu</p>
-    </div>
-
-    <!-- put two QRCode at the bottome -->
-    <div id="qr-container">
-      <div class="qr-box left">
-        <p>Input Questionnaire:</p>
-        <img src="pic/questionnaireQRCode.png" alt="questionnaireQRCode">
-      </div>
-
-      <div class="qr-box right">
-        <p>Share this page:</p>
-        <img src="pic/thispage.png" alt="thispageQRCode">
+          <button id="reset-filters">Reset</button>
       </div>
     </div>
+
+    <!-- the map part-->
+    <div id="map"></div>
     
-  </div>
+    <!-- Transparent Bottom Panel -->
+    <div id="bottom-panel" class="collapsed">
+      <div id="panel-content">
+        <p>This webpage aims to show locations of all neutrino experiments on earth.
+        Information for any neutrino experiments are being collected. Helps are appreciated.
+        If you would like to share about your experiment, please fill in this
+        <a href="https://forms.gle/WcvSnw4ut5i9zfTq8">Questionnaire</a>. 😃</p>
+        <p>This webpage, NeutrinoExperimentsOnEarth, is maintained by Keng Lin,
+        contact: keng.linATrutgers.edu</p>
+      </div>
 
-  <button id="toggle-panel">▲More</button>
-
-  <script src="utility/map_elements.js"></script>
-  <script src="utility/text_panel.js"></script>
-
-  
-</body>
-
-
-
-
-
-<!-- submission section -->
-<!--
-<div class="container">
-    <h2>Can you tell me yours?</h2>
-    <form id="inputForm">
-        <div class="input-group">
-            <label for="textbox1">Name of the Experiment:</label>
-            <input type="text" id="ExpName" placeholder="e.g. MicroBooNE">
+      <!-- put two QRCode at the bottome -->
+      <div id="qr-container">
+        <div class="qr-box left">
+          <p>Input Questionnaire:</p>
+          <img src="pic/questionnaireQRCode.png" alt="questionnaireQRCode">
         </div>
-        <div class="input-group">
-            <label for="textbox2">Location:</label>
-            <input type="text" id="Loc" placeholder="(latitude,longitude)">
-        </div>
-        <button type="submit">Submit</button>
-    </form>
-</div>
--->
 
-</body>
+        <div class="qr-box right">
+          <p>Share this page:</p>
+          <img src="pic/thispage.png" alt="thispageQRCode">
+        </div>
+      </div>
+      
+    </div>
+
+    <button id="toggle-panel">▲More</button>
+
+    
+
+    <script src="utility/map_init.js"></script> <!-- Map initialization must come first -->
+    <script src="utility/map_markerLoader.js"></script><!-- Marker loader depends on map -->
+    <script src="utility/map_filters.js"></script><!-- Filters depend on allMarkers from marker_loader -->
+
+    <script src="utility/ui_toggle.js"></script><!-- UI toggles for panels -->
+
+    <script>
+      // Initialize markers after map is ready
+      initMarkers();
+    </script>
+  </body>
+
 </html>
