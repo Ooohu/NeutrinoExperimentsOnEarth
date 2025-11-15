@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="author" content="Keng Lin">
     <meta name="keywords" content="neutrino, neutrinos, nu, earth">
     <meta name="description" content="NeutrinoExperimentsOnEarth">
@@ -10,7 +10,11 @@
     <title>Neutrino Experiments On Earth</title>
 
     <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" href="utility/styles.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+    <!-- Your custom styles -->
+    <link rel="stylesheet" href="utility/styles.css"/>
+
 
     <!-- Leaflet JavaScript -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
@@ -19,37 +23,76 @@
 <body>
 <!-- url for form: https://docs.google.com/spreadsheets/d/1Rz3lUFNdTXeOOFCT4Qhbb7M-NeC_7I2CDYi3o5V1ypw/edit#gid=1692128851-->
 <!-- url for website: https://ooohu.github.io/NeutrinoExperimentsOnEarth/ -->
-<!-- url for questionnair: https://docs.google.com/forms/d/1Nm1uhVYQ3VYdWN92dQQ9RSGNl8wGAIK1yW6erjVBizA/edit -->
+<!-- url for questionnaire: https://docs.google.com/forms/d/1Nm1uhVYQ3VYdWN92dQQ9RSGNl8wGAIK1yW6erjVBizA/edit -->
 
-<!-- the map part-->
-<div id="map" style="height: 300px;"></div>
-<script src="utility/map.js"></script>
+  <!-- Search Box -->
+  <div id="search-container">
+    <input type="text" id="experiment-search" placeholder="Search for an experiment..." />
+    <!-- Filter Toggle -->
+    <button id="toggle-filters">Filters ▼</button>
+    
+    <!-- Filter Panel -->
+    <div id="filter-panel" class="collapsed">
+        <div class="filter-group">
+            <label for="energy-min">Energy of Interest [MeV]:</label>
+            <div class="inputs-row">
+                <input type="number" id="energy-min" placeholder="Min">
+                <input type="number" id="energy-max" placeholder="Max">
+            </div>
+        </div>
 
-<div style="margin-left:100px;margin-right:100px;">
-  <p>This webpage aims to show locations of all neutrino experiments on earth.
-    Information for any neutrino experiments are being collected. Helps are appreciated.
-    If you would to share about your experiment, please fill in this
-  <a href="https://forms.gle/WcvSnw4ut5i9zfTq8"> Questionnaire</a>. 😃</p>
-  <p>This webpage, NeutrinoExperimentsOnEarth, is maintained by Keng Lin,
-  contact: keng.linATrutgers.edu</p>
-</div>
+        <div class="filter-group">
+            <label for="year-min">Years:</label>
+            <div class="inputs-row">
+                <input type="number" id="year-min" placeholder="1930">
+                <input type="number" id="year-max" placeholder="Max">
+            </div>
+        </div>
 
-
-
-<!-- put two QRCode at the bottome -->
-<div style="height:65px">
-  <div class="logo1" style="position:fixed;left:7px;bottom:0px;z-index:999">
-    <p style="font-size:10px; background-color:#FFFFFF;">
-      Questionnaire QR code: </p>
-    <img src="pic/questionnaireQRCode.png" alt="questionnaireQRCode" style="height:120px">
+        <button id="reset-filters">Reset</button>
+    </div>
   </div>
 
-  <div class="logo2" style="position:fixed;right:7px;bottom:0px;z-index:999">
-    <p style="font-size:10px; background-color:#FFFFFF;">
-      This page QR code: </p>
-    <img src="pic/thispage.png" alt="thispageQRCode" style="height:120px">
+  <!-- the map part-->
+  <div id="map"></div>
+  
+  <!-- Transparent Bottom Panel -->
+  <div id="bottom-panel" class="collapsed">
+    <div id="panel-content">
+      <p>This webpage aims to show locations of all neutrino experiments on earth.
+      Information for any neutrino experiments are being collected. Helps are appreciated.
+      If you would like to share about your experiment, please fill in this
+      <a href="https://forms.gle/WcvSnw4ut5i9zfTq8">Questionnaire</a>. 😃</p>
+      <p>This webpage, NeutrinoExperimentsOnEarth, is maintained by Keng Lin,
+      contact: keng.linATrutgers.edu</p>
+    </div>
+
+    <!-- put two QRCode at the bottome -->
+    <div id="qr-container">
+      <div class="qr-box left">
+        <p>Input Questionnaire:</p>
+        <img src="pic/questionnaireQRCode.png" alt="questionnaireQRCode">
+      </div>
+
+      <div class="qr-box right">
+        <p>Share this page:</p>
+        <img src="pic/thispage.png" alt="thispageQRCode">
+      </div>
+    </div>
+    
   </div>
-</div>
+
+  <button id="toggle-panel">▲More</button>
+
+  <script src="utility/map_elements.js"></script>
+  <script src="utility/text_panel.js"></script>
+
+  
+</body>
+
+
+
+
 
 <!-- submission section -->
 <!--
