@@ -182,7 +182,7 @@
         },
         {
             "Name": "MicroBooNE",
-            "FullName": null,
+            "FullName": "Micro-Booster Neutrino Experiment",
             "Generations": "MicroBooNE",
             "Latitude": 41.83754685,
             "Longitude": -88.26958094,
@@ -222,7 +222,7 @@
         },
         {
             "Name": "Nova",
-            "FullName": null,
+            "FullName": "NuMI Off-Axis nu_e Appearance ",
             "Generations": "Nova Near detector",
             "Latitude": 41.8395656,
             "Longitude": -88.2702022,
@@ -362,7 +362,7 @@
         },
         {
             "Name": "MINERvA",
-            "FullName": null,
+            "FullName": "Main INjector ExpeRiment of v (nu) on A (atom)",
             "Generations": "MINERvA",
             "Latitude": 41.8394197,
             "Longitude": -88.2701378,
