@@ -359,6 +359,26 @@
             "DateofRetirement": null,
             "DetectorDetails": "FineGrind",
             "Discovery": null
+        },
+        {
+            "Name": "MINERvA",
+            "FullName": null,
+            "Generations": "MINERvA",
+            "Latitude": 41.8394197,
+            "Longitude": -88.2701378,
+            "Logo": "https://minerva.fnal.gov/wp-content/uploads/2018/06/minerva_pride.jpeg",
+            "DetectorType": "Tracking Detector",
+            "NeutrinoType": "Accelerator",
+            "NeutrinoSources": "NuMI",
+            "EnergyMeVMin": 10,
+            "EnergyMeVMax": 10000.0,
+            "Goal": "Neutron detection",
+            "Proposal": "https://minerva.fnal.gov/proposals-and-design-reports/",
+            "ProposedDate": null,
+            "StartDataTaking": 2009.0,
+            "DateofRetirement": 2019.0,
+            "DetectorDetails": "In front of MINOS, semi-cylinder 5m in length, 3.45 in diameter. Filled with Polystyrene (CH). Can detctor neutron wieh energy at O(10) MeV.",
+            "Discovery": null
         }
     ]
 }
