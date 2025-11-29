@@ -73,11 +73,16 @@ function addMarkerToMap(marker) {
             this.closePopup();
         })
         .on('click', function() {
+            const fallbackImage = "assets/images/404NotFound.jpg";
+
             const imageContent = `
                 <div class="popup-image-container">
-                    <img src="${marker.imagePath}" alt="${marker.label} Image">
+                    <img src="${marker.imagePath}"
+                        alt="${marker.label} Image"
+                        onerror="this.onerror=null; this.src='${fallbackImage}';">
                 </div>
             `;
+
             markerPopup.setContent(imageContent);
             this.openPopup();
         });
