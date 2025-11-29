@@ -1,7 +1,7 @@
 let allMarkers = []; // store all marker objects
 
 async function loadMarkerData() {
-    const response = await fetch('./utility/ExpListConfig.json');
+    const response = await fetch('assets/data/ExpListConfig.json');
     const data = await response.json();
 
     return data.ExperimentList.map(exp => ({
@@ -73,7 +73,11 @@ function addMarkerToMap(marker) {
             this.closePopup();
         })
         .on('click', function() {
-            const imageContent = `<img src="${marker.imagePath}" alt="${marker.label} Image" style="max-width: 120px; height: auto;">`;
+            const imageContent = `
+                <div class="popup-image-container">
+                    <img src="${marker.imagePath}" alt="${marker.label} Image">
+                </div>
+            `;
             markerPopup.setContent(imageContent);
             this.openPopup();
         });

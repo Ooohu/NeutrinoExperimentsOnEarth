@@ -13,8 +13,11 @@
       <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
 
       <!-- Your custom styles -->
-      <link rel="stylesheet" href="utility/styles.css"/>
-
+      <!--<link rel="stylesheet" href="styles/styles.css"/>-->
+      <link rel="stylesheet" href="css/base.css">
+      <link rel="stylesheet" href="css/map.css">
+      <link rel="stylesheet" href="css/filters.css">
+      <link rel="stylesheet" href="css/bottom-panel.css">
 
       <!-- Leaflet JavaScript -->
       <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
@@ -99,12 +102,12 @@
       <div id="qr-container">
         <div class="qr-box left">
           <p>Input Questionnaire:</p>
-          <img src="pic/questionnaireQRCode.png" alt="questionnaireQRCode">
+          <img src="assets/images/questionnaireQRCode.png" alt="questionnaireQRCode">
         </div>
 
         <div class="qr-box right">
           <p>Share this page:</p>
-          <img src="pic/thispage.png" alt="thispageQRCode">
+          <img src="assets/images/thispage.png" alt="thispageQRCode">
         </div>
       </div>
       
@@ -114,11 +117,11 @@
 
     
 
-    <script src="utility/map_init.js"></script> <!-- Map initialization must come first -->
-    <script src="utility/map_markerLoader.js"></script><!-- Marker loader depends on map -->
-    <script src="utility/map_filters.js"></script><!-- Filters depend on allMarkers from marker_loader -->
+    <script src="scripts/map/map_init.js"></script> <!-- Map initialization must come first -->
+    <script src="scripts/map/map_markerLoader.js"></script><!-- Marker loader depends on map -->
+    <script src="scripts/map/map_filters.js"></script><!-- Filters depend on allMarkers from marker_loader -->
 
-    <script src="utility/ui_toggle.js"></script><!-- UI toggles for panels -->
+    <script src="scripts/ui/ui_toggle.js"></script><!-- UI toggles for panels -->
 
     <script>
       // Initialize markers after map is ready

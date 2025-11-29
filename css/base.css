@@ -1,0 +1,11 @@
+/* ---------- Global Reset ---------- */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Optional base styles */
+body {
+    font-family: Arial, sans-serif;
+}
