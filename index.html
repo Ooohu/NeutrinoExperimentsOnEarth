@@ -38,7 +38,7 @@
       <!-- Filter Panel -->
       <div id="filter-panel" class="collapsed">
           <div class="group-title">
-              <label for="energy-min">Energy of Interest [MeV]:</label>
+              <label for="energy-min"><del>Energy of Interest [MeV]:</del></label>
               <div class="inputs-row">
                   <input type="number" id="energy-min" placeholder="Min">
                   <input type="number" id="energy-max" placeholder="Max">
@@ -58,6 +58,11 @@
               <label>Detector Type:</label>
               <div class="inputs-row">
                   <label>
+                      <input type="checkbox" class="dtype-filter" value="black" checked>
+                      <img src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-black.png" class="marker-checkbox-icon" alt="Black marker">
+                      Scintillation
+                  </label>
+                  <label>
                       <input type="checkbox" class="dtype-filter" value="blue" checked>
                       <img src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png" class="marker-checkbox-icon" alt="Blue marker">
                       Cherenkov
@@ -68,14 +73,9 @@
                       TPC
                   </label>
                   <label>
-                      <input type="checkbox" class="dtype-filter" value="black" checked>
-                      <img src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-black.png" class="marker-checkbox-icon" alt="Black marker">
-                      Scintillation
-                  </label>
-                  <label>
                       <input type="checkbox" class="dtype-filter" value="grey" checked>
                       <img src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-grey.png" class="marker-checkbox-icon" alt="Grey marker">
-                      Unclassified
+                      Unclassified(yet)
                   </label>
               </div>
           </div>
