@@ -18,12 +18,51 @@ async function loadMarkerData() {
     }));
 }
 
+
 // Add a single marker
 function addMarkerToMap(marker) {
     const popupContent = `<p>${marker.label}</p>`;
     const markerPopup = L.popup().setContent(popupContent);
 
-    const leafletMarker = L.marker([marker.lat, marker.lng])
+    //Choose a marker
+
+    // Define marker icons, see https://github.com/pointhi/leaflet-color-markers
+    // Helper function to create a colored Leaflet marker
+    function createMarkerIcon(color) {
+        return L.icon({
+            iconUrl: `https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-${color}.png`,
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+    }
+
+    // Create icons
+    const greyIcon  = createMarkerIcon('grey');
+    const blueIcon  = createMarkerIcon('blue');
+    const redIcon   = createMarkerIcon('red');
+    const blackIcon = createMarkerIcon('black');
+
+
+    // Determine which icon to use
+    let chosenIcon;
+    const dtypeLower = marker.Dtype.toLowerCase();
+    if (dtypeLower.includes("cherenkov")) {
+        chosenIcon = blueIcon;
+    } else if (dtypeLower.includes("scintillator") || dtypeLower.includes("scintillation") || dtypeLower.includes("water")) {
+        chosenIcon = blackIcon;
+    } else if (dtypeLower.includes("artpc")) {
+        chosenIcon = redIcon;
+    } else {
+        chosenIcon = greyIcon; // default blue Leaflet marker
+    }
+    //We ust chosenIcon
+
+
+
+    const leafletMarker = L.marker([marker.lat, marker.lng], { icon: chosenIcon })
         .bindPopup(markerPopup)
         .addTo(map)
         .on('mouseover', function() {

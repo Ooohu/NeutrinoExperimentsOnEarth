@@ -15,25 +15,6 @@ html, body {
 }
 
 
-/* Form / container styling (optional, keep old styles) */
-/*
-.container {
-    text-align: center;
-    margin: 20px;
-}
-
-.input-container {
-    margin-bottom: 20px;
-}
-
-.input-container label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-*/
-
-
 /* ---
 
 Searching Bars
@@ -83,25 +64,65 @@ Searching Bars
     transition: max-height 0.3s ease, opacity 0.3s ease;
     overflow: hidden;
     max-height: 0;
-    opacity: 0;
+    opacity: 1;
+
+    /* new width settings */
+    width: 100%;       /* fill parent container */
+    max-width: 400px;  /* maximum width of the panel */
+    margin-left: auto; /* center horizontally */
+    margin-right: auto;
+    box-sizing: border-box; /* include padding in width */
+
+    
 }
 
 #filter-panel.expanded {
-    max-height: 200px; /* enough to show all inputs */
-    opacity: 1;
+    max-height: 500px; /* enough to show all inputs */
 }
 
 /* Filter group styling */
-.filter-group {
+.group-title {
     margin-bottom: 10px;
     text-align: left;
 }
 
 /* Row of inputs */
+/* Make all checkboxes + images + text inline and compact */
 .inputs-row {
     display: flex;
-    gap: 10px; /* space between min/max inputs */
-    margin-top: 3px;
+    flex-wrap: wrap;       /* wrap on very small screens if needed */
+    gap: 10px;             /* space between each label group */
+    align-items: center;   /* vertical alignment */
+}
+
+
+/* Each label contains checkbox + image + text */
+.inputs-row label {
+    display: flex;
+    align-items: center;
+    gap: 3px;             /* small space between checkbox, image, and text */
+    margin: 0;            /* remove extra margins */
+    white-space: nowrap;  /* keep all content in the same line */
+    font-size: 14px;
+}
+
+.inputs-row input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    margin: 0; /* remove extra margin around checkbox */
+}
+
+.marker-checkbox-icon {
+    width: 20px;       /* small size to fit nicely */
+    height: 34px;      /* keep aspect ratio of Leaflet marker */
+    margin: 0 5px;     /* space between checkbox and text */
+    vertical-align: middle;
+}
+
+.group-title label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 3px; /* space below label */
 }
 
 /* Inputs styling */
@@ -121,6 +142,13 @@ Searching Bars
     border-radius: 5px;
     background-color: rgba(0,0,0,0.2);
 }
+
+
+
+
+
+
+
 
 /* ---
 

@@ -20,6 +20,7 @@
       <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
   </head>
+
   <body>
   <!-- url for form: https://docs.google.com/spreadsheets/d/1Rz3lUFNdTXeOOFCT4Qhbb7M-NeC_7I2CDYi3o5V1ypw/edit#gid=1692128851-->
   <!-- url for website: https://ooohu.github.io/NeutrinoExperimentsOnEarth/ -->
@@ -33,7 +34,7 @@
       
       <!-- Filter Panel -->
       <div id="filter-panel" class="collapsed">
-          <div class="filter-group">
+          <div class="group-title">
               <label for="energy-min">Energy of Interest [MeV]:</label>
               <div class="inputs-row">
                   <input type="number" id="energy-min" placeholder="Min">
@@ -41,11 +42,38 @@
               </div>
           </div>
 
-          <div class="filter-group">
+          <div class="group-title">
               <label for="year-min">Years:</label>
               <div class="inputs-row">
                   <input type="number" id="year-min" placeholder="1930">
                   <input type="number" id="year-max" placeholder="Max">
+              </div>
+          </div>
+
+           <!-- New filter row: Detector Type checkboxes -->
+          <div class="group-title">
+              <label>Detector Type:</label>
+              <div class="inputs-row">
+                  <label>
+                      <input type="checkbox" class="dtype-filter" value="blue" checked>
+                      <img src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png" class="marker-checkbox-icon" alt="Blue marker">
+                      Cherenkov
+                  </label>
+                  <label>
+                      <input type="checkbox" class="dtype-filter" value="red" checked>
+                      <img src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png" class="marker-checkbox-icon" alt="Red marker">
+                      TPC
+                  </label>
+                  <label>
+                      <input type="checkbox" class="dtype-filter" value="black" checked>
+                      <img src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-black.png" class="marker-checkbox-icon" alt="Black marker">
+                      Scintillation
+                  </label>
+                  <label>
+                      <input type="checkbox" class="dtype-filter" value="grey" checked>
+                      <img src="https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-grey.png" class="marker-checkbox-icon" alt="Grey marker">
+                      Unclassified
+                  </label>
               </div>
           </div>
 
