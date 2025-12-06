@@ -379,6 +379,26 @@
             "DateofRetirement": 2019.0,
             "DetectorDetails": "In front of MINOS, semi-cylinder 5m in length, 3.45 in diameter. Filled with Polystyrene (CH). Can detctor neutron wieh energy at O(10) MeV.",
             "Discovery": null
+        },
+        {
+            "Name": "Nova",
+            "FullName": null,
+            "Generations": "Nova Far detector",
+            "Latitude": 48.37929253,
+            "Longitude": -92.8315068,
+            "Logo": null,
+            "DetectorType": "Liquid scintillator",
+            "NeutrinoType": "Accelerator, Long-Baseline",
+            "NeutrinoSources": "NuMI",
+            "EnergyMeVMin": null,
+            "EnergyMeVMax": null,
+            "Goal": "Oscillation",
+            "Proposal": null,
+            "ProposedDate": null,
+            "StartDataTaking": null,
+            "DateofRetirement": null,
+            "DetectorDetails": "193 ton PVC Shell, off-axis experiment. 810km away. PVC cells filled with liquid scintillator. near surface",
+            "Discovery": "Strong constrain on deltaM32 with join analysis with t2k"
         }
     ]
 }
